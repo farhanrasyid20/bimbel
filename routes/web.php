@@ -9,3 +9,7 @@ Route::get('/', function () {
 use App\Http\Controllers\LoginController;
 
 Route::get('/login', [LoginController::class, 'index']);
+
+use App\Http\Controllers\bagusController;
+
+Route::get('/bagus', [bagusController::class, 'tampilkan']);
