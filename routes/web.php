@@ -21,3 +21,7 @@ Route::get('/diky', [dikyController::class, 'tampilkan']);
 use App\Http\Controllers\ariefController;
 
 Route::get('/arief', [ariefController::class, 'tampilkan']);
+
+use App\Http\Controllers\farhanController;
+
+Route::get('/farhan', [farhanController::class, 'tampilkan']);
