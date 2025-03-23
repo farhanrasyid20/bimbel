@@ -17,3 +17,7 @@ Route::get('/bagus', [bagusController::class, 'tampilkan']);
 use App\Http\Controllers\dikyController;
 
 Route::get('/diky', [dikyController::class, 'tampilkan']);
+
+use App\Http\Controllers\ariefController;
+
+Route::get('/arief', [ariefController::class, 'tampilkan']);
