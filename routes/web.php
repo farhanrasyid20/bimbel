@@ -45,11 +45,6 @@ use App\Http\Controllers\farhanController;
 
 Route::get('/farhan', [farhanController::class, 'tampilkan']);
 
-use App\Http\Controllers\NilaiController;
-
-Route::get('/nilai', [NilaiController::class, 'index'])->name('nilai');
-
-
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/kehadiran_siswa', function () {
@@ -107,3 +102,11 @@ Route::get('/nilai_siswa', function () {
 
     return view('nilai_siswa', compact('nilai'));
 })->name('nilai.siswa');
+
+Route::get('/kehadiran_guru', function () {
+    return view('kehadiran_guru');
+})->name('nilai.index');
+
+Route::get('/nilai_guru', function () {
+    return view('nilai_guru');
+})->name('nilai_guru');
