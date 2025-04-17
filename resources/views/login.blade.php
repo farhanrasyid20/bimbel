@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login - Sobat Bimbel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-white flex items-center justify-center h-screen">
 
-<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
-    <div class="card p-4 shadow" style="width: 300px;">
-        <h2 class="text-center">Login</h2>
-        <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" id="username" class="form-control" placeholder="Masukkan username">
+    <div class="flex flex-col items-center space-y-6">
+        <!-- Logo -->
+        <img src="{{ asset('images/sobat-bimbel.png') }}" alt="Sobat Bimbel Logo" class="w-40">
+
+        <!-- Title -->
+        <h2 class="text-blue-600 text-sm font-semibold uppercase tracking-wide text-center">
+            SISTEM INFORMASI SISWA/I SOBAT BIMBEL
+        </h2>
+
+        <!-- Form Card -->
+        <div class="bg-blue-900 p-8 rounded-2xl shadow-md w-80 text-white">
+            <h3 class="text-center text-lg font-bold mb-6">MASUK</h3>
+
+            <form action="#" method="POST" class="space-y-4">
+                @csrf
+
+                <!-- Username -->
+                <div class="relative">
+                    <input type="text" name="username" placeholder="Nama Pengguna" class="w-full p-3 rounded-full text-black focus:outline-none">
+                    <span class="absolute right-4 top-3 text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M5.121 17.804A7.963 7.963 0 0112 15a7.963 7.963 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </span>
+                </div>
+
+                <!-- Password -->
+                <div class="relative">
+                    <input type="password" name="password" placeholder="Kata Sandi" class="w-full p-3 rounded-full text-black focus:outline-none">
+                    <span class="absolute right-4 top-3 text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M12 11c1.657 0 3-1.343 3-3V6a3 3 0 00-6 0v2c0 1.657 1.343 3 3 3zM5 11h14v10H5V11z"/>
+                        </svg>
+                    </span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full font-semibold">
+                    MASUK
+                </button>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" id="password" class="form-control" placeholder="Masukkan password">
-        </div>
-        <button class="btn btn-primary w-100" onclick="login()">Login</button>
-        <p id="message" class="text-danger text-center mt-2"></p>
     </div>
 
-    <script>
-        function login() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            if (username === "admin" && password === "1234") {
-                alert("Login berhasil!");
-            } else {
-                document.getElementById('message').innerText = "Username atau password salah";
-            }
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
+
